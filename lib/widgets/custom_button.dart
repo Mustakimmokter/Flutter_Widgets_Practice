@@ -4,21 +4,36 @@ import 'package:widget_practice_one/widgets/custom_container.dart';
 import 'package:widget_practice_one/widgets/custom_text.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key}) : super(key: key);
+  const CustomButton(
+      {Key? key,
+      this.title = 'Buy More',
+      required this.onTap,
+      this.backgroundColor = primaryBrandColor,
+      this.titleColor = Colors.white,
+        this.horizontalPadding = 20,
+        this.verticalPadding = 10,
+        this.titleSize = 18
+      })
+      : super(key: key);
+
+  final String? title;
+  final VoidCallback onTap;
+  final Color? backgroundColor, titleColor;
+  final double? horizontalPadding, verticalPadding, titleSize;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){},
+    return InkResponse(
+      onTap: onTap,
       child: CustomContainer(
-        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 14),
-        color: Colors.green.withOpacity(0.1),
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding!, vertical: verticalPadding!),
+        color: backgroundColor,
         borderRound: 05,
-        child: const CustomText(
-          size: 18,
-          color: primaryBrandColor,
+        child: CustomText(
+          size: titleSize,
+          color: titleColor,
           fontWeight: FontWeight.bold,
-          text: 'Buy More',
+          text: title!,
         ),
       ),
     );
