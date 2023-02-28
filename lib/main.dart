@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
 import 'package:widget_practice_one/iu/show_widgets/screen/show_widget_screen.dart';
+import 'package:widget_practice_one/widgets/custom_tabbar.dart';
 import 'iu/screen/ebook_app_screen.dart';
 import 'iu/show_widgets/provider/provider.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.red,
         ),
-        home: ShowWidgetScreen(),
+        home: CustomTabBar(),
       );
 
     },);
