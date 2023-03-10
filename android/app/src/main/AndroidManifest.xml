@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.widget_practice_one">
-   <application
+    <application
         android:label="widget_practice_one"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
@@ -31,4 +31,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        />
 </manifest>
