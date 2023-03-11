@@ -25,6 +25,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkResponse(
       onTap: onTap,
+      radius: 50,
       child: CustomContainer(
         padding: EdgeInsets.symmetric(horizontal: horizontalPadding!, vertical: verticalPadding!),
         color: backgroundColor,

@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
 import 'package:widget_practice_one/iu/show_widgets/screen/show_widget_screen.dart';
 import 'package:widget_practice_one/widgets/custom_tabbar.dart';
+import 'package:widget_practice_one/widgets/text_from_field.dart';
 import 'package:widget_practice_one/widgets/video_picker.dart';
+import 'package:widget_practice_one/widgets/youtube_video_load.dart';
 import 'iu/screen/ebook_app_screen.dart';
 import 'iu/show_widgets/provider/provider.dart';
 
@@ -29,9 +31,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.green,
         ),
-        home:  VideoApp(),
+        home:  CustomTextFormField(),
       );
 
     },);

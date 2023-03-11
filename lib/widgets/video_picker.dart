@@ -119,13 +119,13 @@ class _VideoAppState extends State<VideoApp> {
 
   final _videoPicker = ImagePicker();
   XFile? _video;
+  List<XFile>? _videos;
   double? _start;
 
 
   Future<void> videoPick()async{
       _video = await _videoPicker.pickVideo(source: ImageSource.gallery);
       setState(() {
-
       });
       if(_video != null){
         getVideo();
@@ -149,60 +149,53 @@ class _VideoAppState extends State<VideoApp> {
 
   void getVideo(){
     if(_video != null){
-      _videoController = VideoPlayerController.file(File(_video!.path),)..initialize().then((_) {
-        setState(() {
-          // _videoController!.play();
-          _chewieController = ChewieController(
-            videoPlayerController: _videoController!,
-            // aspectRatio: 2/3,
-            autoPlay: false,
-            //showControlsOnInitialize: true,
-            looping: false,
-            allowMuting: true,
-            showControls: true,
-            // materialProgressColors: ChewieProgressColors(
-            //   playedColor: Colors.pink,
-            //   handleColor: Colors.blue,
-            //   backgroundColor: Colors.grey,
-            //   bufferedColor: Colors.lightGreen,
-            // ),
-            // subtitle: Subtitles([
-            //   Subtitle(index: 0, start: const Duration(seconds: 3), end: const Duration(seconds: 4), text: 'Your Subtle'),
-            // ]),
-            additionalOptions: (context) {
-              return <OptionItem>[
-                OptionItem(
-                  onTap: () => debugPrint('My option works!'),
-                  iconData: Icons.chat,
-                  title: 'My localized title',
-                ),
-                OptionItem(
-                  onTap: () =>
-                      debugPrint('Another option working!'),
-                  iconData: Icons.chat,
-                  title: 'Another localized title',
-                ),
-              ];
-            },
-            zoomAndPan: true,
-            allowFullScreen: true,
-            allowPlaybackSpeedChanging: true,
-            // cupertinoProgressColors: ChewieProgressColors(
-            //   handleColor: Colors.red,
-            //   playedColor: Colors.grey,
-            //   bufferedColor: Colors.transparent,
-            // ),
-            placeholder: const CustomContainer(
-              //padding: EdgeInsets.symmetric(horizontal: 20),
-              // height: 250,
-              // width: 240,
-              borderRound: 10,
-              color: Colors.grey,
-            ),
-            autoInitialize: true,
-          );
-        });
-      });
+
+       _videoController = VideoPlayerController.file(File(_video!.path),)..initialize().then((_) {
+         setState(() {
+           // _videoController!.play();
+           _chewieController = ChewieController(
+             videoPlayerController: _videoController!,
+             // aspectRatio: 2/3,
+             autoPlay: false,
+             //showControlsOnInitialize: true,
+             looping: false,
+             allowMuting: true,
+             showControls: true,
+             // materialProgressColors: ChewieProgressColors(
+             //   playedColor: Colors.pink,
+             //   handleColor: Colors.blue,
+             //   backgroundColor: Colors.grey,
+             //   bufferedColor: Colors.lightGreen,
+             // ),
+             // subtitle: Subtitles([
+             //   Subtitle(index: 0, start: const Duration(seconds: 3), end: const Duration(seconds: 4), text: 'Your Subtle'),
+             // ]),
+             additionalOptions: (context) {
+               return <OptionItem>[
+                 OptionItem(
+                   onTap: () => debugPrint('My option works!'),
+                   iconData: Icons.chat,
+                   title: 'My localized title',
+                 ),
+                 OptionItem(
+                   onTap: () =>
+                       debugPrint('Another option working!'),
+                   iconData: Icons.chat,
+                   title: 'Another localized title',
+                 ),
+               ];
+             },
+             zoomAndPan: true,
+             allowFullScreen: true,
+             allowPlaybackSpeedChanging: true,
+             placeholder: const CustomContainer(
+               borderRound: 10,
+               color: Colors.grey,
+             ),
+             autoInitialize: true,
+           );
+         });
+       });
     }
 
   }
@@ -219,13 +212,13 @@ class _VideoAppState extends State<VideoApp> {
             children: [
               _chewieController != null
                   ? SizedBox(
-                // //padding: EdgeInsets.all(10),
-                height:250 ,
-                width: 240,
-                // borderRound: 20,
-                // boxBorder: Border.all(color: Colors.grey,width: 05),
-                child: Chewie(controller: _chewieController!),
-              )
+          // //padding: EdgeInsets.all(10),
+          height:250 ,
+            width: 240,
+            // borderRound: 20,
+            // boxBorder: Border.all(color: Colors.grey,width: 05),
+            child: Chewie(controller: _chewieController!),
+          )
                   : CustomContainer(
                 height: 250,
                 width: 200,
