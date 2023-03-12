@@ -50,7 +50,9 @@ class KSliverAnimation extends StatelessWidget {
                   SizedBox(height: 10),
                   CustomText(
                     alignment: TextAlign.left,
-                    size: 14,
+                    size: 15,
+                    textOverflow: TextOverflow.visible,
+                    fontWeight: FontWeight.normal,
                     text: 'Text could be movies, scripts, paintings, songs, political cartoons, '
                         'advertisements and maps. If we can look at something with words and sentences, '
                         'explore it, find layers of meaning in it, and draw information and conclusions '

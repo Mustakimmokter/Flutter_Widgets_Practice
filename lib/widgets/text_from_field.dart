@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_practice_one/widgets/custom_button.dart';
+import 'package:widget_practice_one/widgets/custom_text.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const CustomText(text: 'Text Form Field',),),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),

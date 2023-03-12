@@ -8,11 +8,12 @@ class KRoundedButton extends StatelessWidget {
     required this.onTap,
     required this.icon,
     this.color = primaryBrandColor,
+    this.iconColor = Colors.white
   }) : super(key: key);
 
   final VoidCallback onTap;
   final IconData icon;
-  final Color? color;
+  final Color? color,iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class KRoundedButton extends StatelessWidget {
         color: color,
         child: Icon(
           icon,
+          color: iconColor,
           size: 22,
         ),
       ),

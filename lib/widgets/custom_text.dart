@@ -8,6 +8,7 @@ class CustomText extends StatelessWidget {
     this.color,
     this.fontWeight,
     this.alignment = TextAlign.center,
+    this.textOverflow = TextOverflow.ellipsis,
   }) : super(key: key);
 
   final String text;
@@ -15,6 +16,7 @@ class CustomText extends StatelessWidget {
   final Color? color;
   final FontWeight? fontWeight;
   final TextAlign? alignment;
+  final TextOverflow? textOverflow;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,8 @@ class CustomText extends StatelessWidget {
           fontSize: size,
           fontWeight: fontWeight,
           color: color,
-        overflow: TextOverflow.ellipsis
+        //fontFamily: 'Poppins',
+        overflow: textOverflow,
       ),
     );
   }

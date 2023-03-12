@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_practice_one/db/local_db.dart';
+import 'package:widget_practice_one/db/screen.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
-import 'package:widget_practice_one/iu/show_widgets/screen/show_widget_screen.dart';
-import 'package:widget_practice_one/widgets/custom_tabbar.dart';
-import 'package:widget_practice_one/widgets/text_from_field.dart';
-import 'package:widget_practice_one/widgets/video_picker.dart';
-import 'package:widget_practice_one/widgets/youtube_video_load.dart';
-import 'iu/screen/ebook_app_screen.dart';
 import 'iu/show_widgets/provider/provider.dart';
 
-void main() {
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await DbHelper.createTable();
   runApp(const MyApp());
 }
 
@@ -32,8 +34,12 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.green,
+          //brightness: Brightness.dark,
+          primaryTextTheme: GoogleFonts.kalamTextTheme(),
+          textTheme: GoogleFonts.senTextTheme(
+          )
         ),
-        home:  CustomTextFormField(),
+        home:  LocalDataBase(),
       );
 
     },);

@@ -23,12 +23,13 @@ class CustomContainer extends StatelessWidget {
   final Color? color;
   final EdgeInsets? padding,margin;
   final DecorationImage? decorationImage;
-  final Border? boxBorder;
+  final BoxBorder? boxBorder;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
+      alignment: Alignment.center,
       height: height,
       width: width,
       padding: padding ??  const EdgeInsets.symmetric(horizontal: 10, vertical: 10),

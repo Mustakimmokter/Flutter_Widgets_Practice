@@ -49,7 +49,8 @@ class KSliverAppbar extends StatelessWidget {
                   SizedBox(height: 10),
                   CustomText(
                     alignment: TextAlign.left,
-                    size: 14,
+                    size: 15,
+                    textOverflow: TextOverflow.visible,
                     text: 'Text could be movies, scripts, paintings, songs, political cartoons, '
                       'advertisements and maps. If we can look at something with words and sentences, '
                       'explore it, find layers of meaning in it, and draw information and conclusions '
@@ -102,8 +103,7 @@ class KSliverAppbar extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(builder: (_)=>const KSliverAnimation()));
         },
         child: const CustomContainer(
-          margin: EdgeInsets.only(top: 14),
-            padding: EdgeInsets.symmetric(vertical: 20),
+          height: 60,
             color: primaryBrandColor,
             child: CustomText(text: 'Continue',color: Colors.white,),
           ),
