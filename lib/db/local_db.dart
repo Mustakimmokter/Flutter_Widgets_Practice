@@ -29,18 +29,23 @@ class DbHelper {
  // As a index
 
  static void addData(String table,String value){
-    final box = Hive.box(table);
+    final box = Hive.box<dynamic>(table);
     box.add(value);
  }
 
  static dynamic getDataTwo(String table,int index){
-    final box = Hive.box(table);
+    final box = Hive.box<dynamic>(table);
     final data = box.getAt(index);
     return data ?? '';
  }
 
+ static int getDataLength(String table){
+    final box = Hive.box<dynamic>(table);
+    return box.isNotEmpty ? box.length : 0;
+ }
+
  static void deleteDataTwo(String table,int index){
-    final box = Hive.box(table);
+    final box = Hive.box<dynamic>(table);
     box.deleteAt(index);
  }
 

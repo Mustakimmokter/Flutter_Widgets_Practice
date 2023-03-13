@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_practice_one/admob/admob.dart';
 import 'package:widget_practice_one/db/local_db.dart';
-import 'package:widget_practice_one/db/screen.dart';
+import 'package:widget_practice_one/db/provider_data_listen.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
 import 'iu/show_widgets/provider/provider.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   await Hive.initFlutter();
   await DbHelper.createTable();
   runApp(const MyApp());
@@ -21,12 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider<EbookProvider>(create: (context) {
+      ChangeNotifierProvider<EbookProvider>(create: (_) {
         return EbookProvider();
       },),
-      ChangeNotifierProvider<WidgetsProvider>(create: (context) {
+      ChangeNotifierProvider<WidgetsProvider>(create: (_) {
         return WidgetsProvider();
       },),
+      ChangeNotifierProvider<DataListener>(create: (_) {
+        return DataListener();
+      },)
     ],
     builder: (context, child) {
       return MaterialApp(
@@ -39,7 +45,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.senTextTheme(
           )
         ),
-        home:  LocalDataBase(),
+        home:  GoogleAdmob(),
       );
 
     },);
