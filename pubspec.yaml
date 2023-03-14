@@ -33,6 +33,8 @@ dependencies:
   google_mobile_ads: ^2.3.0
   google_maps_flutter: ^2.2.5
   location: ^4.2.0
+  rive: ^0.10.3
+  http: ^0.13.5
 
 
 

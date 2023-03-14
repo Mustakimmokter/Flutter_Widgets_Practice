@@ -8,7 +8,9 @@ import 'package:widget_practice_one/db/local_db.dart';
 import 'package:widget_practice_one/db/provider_data_listen.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
 import 'package:widget_practice_one/map/google_maps.dart';
+import 'http_services/screen.dart';
 import 'iu/show_widgets/provider/provider.dart';
+import 'iu/show_widgets/screen/show_widget_screen.dart';
 
 
 Future<void> main() async {
@@ -46,11 +48,12 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.senTextTheme(
           )
         ),
-        home:  GoogleMapsLocation(),
+        home:  const ShowData(),
       );
 
     },);
   }
 }
+
 
 
