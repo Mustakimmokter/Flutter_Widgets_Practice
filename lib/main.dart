@@ -7,6 +7,7 @@ import 'package:widget_practice_one/admob/admob.dart';
 import 'package:widget_practice_one/db/local_db.dart';
 import 'package:widget_practice_one/db/provider_data_listen.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
+import 'package:widget_practice_one/map/google_maps.dart';
 import 'iu/show_widgets/provider/provider.dart';
 
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.senTextTheme(
           )
         ),
-        home:  GoogleAdmob(),
+        home:  GoogleMapsLocation(),
       );
 
     },);
