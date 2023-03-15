@@ -34,12 +34,12 @@ class _ShowDataState extends State<ShowData> {
         itemCount: _userData?.length ?? 0,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: CircleAvatar(child: Image.network(_userData![index].image!,height: 40),radius: 40,),
+            leading: CircleAvatar(radius: 40,child: Image.network(_userData![index].image!,height: 40),),
             title: Text(_userData![index].email!),
             subtitle: Text(_userData![index].userAgent!),
           );
         },
-      ): Center(child: CircularProgressIndicator(),),
+      ): const Center(child: CircularProgressIndicator(),),
     );
   }
 }

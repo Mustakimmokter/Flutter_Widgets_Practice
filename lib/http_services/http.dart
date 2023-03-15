@@ -9,7 +9,7 @@ import 'models/users.dart';
 class HttpResponse {
   
   static Future<List<Users>> getData(String url)async{
-    http.Response response = await http.get(Uri.parse(url));
+    http.Response response = await http.get(Uri.parse(url),);
     print(response.statusCode);
     if(response.statusCode == 200){
       final data = response.body;
