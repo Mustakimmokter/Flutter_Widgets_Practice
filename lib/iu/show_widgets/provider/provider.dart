@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:widget_practice_one/widgets/index.dart';
 
 class WidgetsProvider extends ChangeNotifier {
 
@@ -75,5 +74,9 @@ class WidgetsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+
   
 }
+
+
+

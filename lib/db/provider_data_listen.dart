@@ -9,5 +9,4 @@ class DataListener extends ChangeNotifier {
     notifyListeners();
   }
 
-
 }
