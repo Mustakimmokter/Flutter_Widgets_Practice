@@ -4,6 +4,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:widget_practice_one/admob/admob.dart';
+import 'package:widget_practice_one/alarm_button/screen.dart';
+import 'package:widget_practice_one/animations/screen.dart';
 import 'package:widget_practice_one/db/local_db.dart';
 import 'package:widget_practice_one/db/provider_data_listen.dart';
 import 'package:widget_practice_one/iu/provider/ebook_provider.dart';
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.senTextTheme(
           )
         ),
-        home:  const DragAndDrop(),
+        home:  const AnimationScreen(),
       );
 
     },);

@@ -8,19 +8,8 @@ import 'package:widget_practice_one/http_services/models/user_data.dart';
 import 'package:widget_practice_one/http_services/models/users.dart';
 import 'package:widget_practice_one/iu/show_widgets/provider/provider.dart';
 
-class ShowWidgetScreen extends StatefulWidget {
+class ShowWidgetScreen extends StatelessWidget {
    const ShowWidgetScreen({Key? key}) : super(key: key);
-
-  @override
-  State<ShowWidgetScreen> createState() => _ShowWidgetScreenState();
-}
-
-class _ShowWidgetScreenState extends State<ShowWidgetScreen> {
-
- @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
